@@ -84,7 +84,20 @@ Medical imaging datasets, including MRI images, are often limited in size due to
 
 ## **Model Training**
 
-Resnet-50 is used for training the brain tumor dataset. ResNet-50’s increased depth allows it to capture more intricate patterns and features in the data, which can be beneficial for detecting complex structures in brain tumor images. By transfer learning, ResNet-50’s pre-trained weights from ImageNet are leveraged to bootstrap training on the brain tumor classification task. 
+Many adaptations and refinements have been introduced to customize the original architecture of CNNs, aiming to achieve specialized learning outcomes and enhance performance. These modifications have led to the development of various models, including Inception, Xception, ResNet, and others. In this study, six deep learning models—VGG19, InceptionV3, ResNet-50, Xception, MobileNetV2, and NASNetLarge—were selected for brain tumor classification using MRI scans. These models were chosen due to their proven effectiveness and widespread use in image classification tasks. Their diverse architectures and capabilities provide a comprehensive approach to assessing their effectiveness in the specific task of brain tumor classification
+
+### Configuration of Hyperparameters for the Selected Models
+
+| **Hyperparameter**           | **Configuration**           |
+|------------------------------|-----------------------------|
+| Learning Rate                | $1 \times 10^{-4}$          |
+| Mini-Batch Size              | 32 Images                   |
+| Maximum Epochs               | 25                          |
+| Validation Fraction          | 20%                         |
+| Dropout Probability          | 0.4                         |
+| Optimization Algorithm       | Adam                        |
+| Activation Function          | Softmax                     |
+| Loss Function                | Categorical Cross-Entropy   |
 
 ## **Performance Evaluation**
 ### Model Comparison with Accuracy Metrics
