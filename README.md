@@ -11,7 +11,7 @@ Brain tumor is the accumulation or mass growth of abnormal cells in the brain. T
 
 ## Proposed Framework
 
-![Structure of the Proposed Framework for Brain Tumor Classification](Framework7.17%(1)-cropped.pdf-cropped.pdf)
+![Structure of the Proposed Framework for Brain Tumor Classification](Framework7.17%(1)-cropped.pdf)
 
 The proposed framework for brain tumor classification is illustrated in the figure above. It represents a high-level overview of the process using MRI scans to classify brain tumors. The methodology includes several key steps:
 
