@@ -175,19 +175,19 @@ Many adaptations and refinements have been introduced to customize the original 
 ### **Confusion matrix**
 
 <p align="center">
-  <img src="https://github.com/saras56/Brain_Tumor_Detection_Multiclass/assets/115695360/98b38811-b4ef-4ad6-b3a1-d6a75b25219a">
+  <img src="Results/CM-models.png">
 </p>
 
 ## **Interpretability**
 
+<p align="center">
+  <img src="Results/CM-models.png">
+</p>
 
 ## **Streamlit App**
 
 <p align="center">
   <img src="https://github.com/saras56/Brain_Tumor_Detection_Multiclass/assets/115695360/fe226ebe-d080-420b-83b7-c81e7ed37df7" alt="Description of the image">
-</p>
-<p align="center">
-  Prediction for Pituitary tumor
 </p>
 
 ## **Future work**
