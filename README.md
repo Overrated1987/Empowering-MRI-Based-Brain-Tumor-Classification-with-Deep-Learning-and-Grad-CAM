@@ -190,7 +190,7 @@ Many adaptations and refinements have been introduced to customize the original 
 ## **Streamlit App**
 
 <p align="center">
-  <img src="https://github.com/saras56/Brain_Tumor_Detection_Multiclass/assets/115695360/fe226ebe-d080-420b-83b7-c81e7ed37df7" alt="Description of the image">
+  <img src="Results/prediction(2)-cropped_00.png">
 </p>
 
 ## **Future work**
