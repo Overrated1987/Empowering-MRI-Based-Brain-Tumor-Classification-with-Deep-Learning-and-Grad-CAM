@@ -1,5 +1,5 @@
 
-# **Empowering MRI-Based Brain Tumor Classification with Deep Learning and Grad-CAM**
+# **Empowering brain tumor diagnosis through explainable deep learning**
 
 Brain tumors are among the most lethal diseases, and early detection is crucial for improving patient outcomes. Currently, magnetic resonance imaging (MRI) is the most effective method for early brain tumor detection due to its superior imaging quality for soft tissues. However, manual analysis of brain MRI scans is prone to errors, largely influenced by the radiologists' experience and fatigue. To address these challenges, computer-aided diagnosis (CAD) systems are increasingly significant. These systems leverage advanced computer vision techniques to provide accurate predictions based on medical images, enhancing diagnostic precision and reliability. 
 
