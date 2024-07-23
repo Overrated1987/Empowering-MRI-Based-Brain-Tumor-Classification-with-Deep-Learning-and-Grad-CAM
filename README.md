@@ -181,7 +181,10 @@ Many adaptations and refinements have been introduced to customize the original 
 ## **Interpretability**
 
 <p align="center">
-  <img src="Results/CM-models.png">
+  <img src="Results/Heatmap.png">
+</p>
+<p align="center">
+   Grad-CAM based heatmap visualization of ResNet-50 decision pathways in brain tumor classification.
 </p>
 
 ## **Streamlit App**
