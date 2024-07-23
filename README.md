@@ -41,9 +41,8 @@ The dataset utilized for this model is sourced from the Brain Tumor MRI Dataset 
 
 The dataset is divided into the following categories:
 
-![Categories of the Brain Tumor MRI Dataset](dataset-cropped.pdf)
 <p align="center">
-  <img src="Results/Framework7.17 (1)-cropped_00.png" alt="Description of the image">
+  <img src="Results/Dataset.png" alt="Description of the image">
 </p>
 <p align="center">
   Categories of the Brain Tumor MRI Dataset
@@ -70,10 +69,10 @@ Image preprocessing is applied to all the images in the dataset
 1. Cropping the image : removes the unwanted background noise. Thus helping the algorithm to focus completely on the features of interest
 
 <p align="center">
-  <img src="https://github.com/saras56/Brain_Tumor_Detection_Multiclass/assets/115695360/5ce30227-f438-4fc2-bd25-8ee51f0c828b" alt="Description of the image">
+  <img src="Results/Framework7.17 (1)-cropped_00.png" alt="Description of the image">
 </p>
 <p align="center">
-  Images after Cropping
+  Structure of the proposed framework for brain tumor classifcation
 </p>
 
 2.	Noise Removal : Bilateral filter is used for noise removal. It smooths the image while preserving edges and fine details. Bilateral filter considers both the spatial distance and intensity similarity between pixels when smoothing the image. Hence suitable for processing MRI images acquired with different imaging protocols and parameters.
@@ -84,7 +83,7 @@ Image preprocessing is applied to all the images in the dataset
   <img src="https://github.com/saras56/Brain_Tumor_Detection_Multiclass/assets/115695360/0fc6573c-2c9e-43b6-afcc-cd61a2c7172c" alt="Description of the image">
 </p>
 <p align="center">
-  Images after preprocessing
+  The cropping process of MRI scans.
 </p>
 
 ## **Data Partitioning and Augmentation**
