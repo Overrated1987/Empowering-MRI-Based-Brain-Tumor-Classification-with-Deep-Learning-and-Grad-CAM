@@ -42,6 +42,13 @@ The dataset utilized for this model is sourced from the Brain Tumor MRI Dataset 
 The dataset is divided into the following categories:
 
 ![Categories of the Brain Tumor MRI Dataset](dataset-cropped.pdf)
+<p align="center">
+  <img src="Results/Framework7.17 (1)-cropped_00.png" alt="Description of the image">
+</p>
+<p align="center">
+  Categories of the Brain Tumor MRI Dataset
+</p>
+
 
 ### Dataset Details and Distribution
 
