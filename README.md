@@ -80,7 +80,7 @@ Image preprocessing is applied to all the images in the dataset
 4.	Resize : Resizing the image for standardizing the input size of images to be fed into a machine learning model
 
 <p align="center">
-  <img src="Results/Cropping-cropped_00.png" alt="Description of the image">
+  <img src="Results/Preprocessing-cropped_00.png" alt="Description of the image">
 </p>
 <p align="center">
    The brain tumor MRI after preprocessing.
