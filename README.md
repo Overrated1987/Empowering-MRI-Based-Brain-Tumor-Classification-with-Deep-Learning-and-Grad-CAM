@@ -1,11 +1,9 @@
 
 # **Empowering MRI-Based Brain Tumor Classification with Deep Learning and Grad-CAM**
 
-Brain tumor classification poses a significant challenge in computer-aided diagnosis (CAD) for medical applications. Machine learning algorithms hold promise for assisting radiologists in reliably detecting tumors, potentially reducing the need for invasive procedures. Despite this, key issues remain, such as selecting the optimal deep learning architecture and ensuring accurate assessment of model outputs. This study addresses these challenges by proposing an advanced deep learning-based system for classifying four types of brain tumors—Glioma, Meningioma, Pituitary tumors, and non-tumor images—using a comprehensive MRI dataset.
+Brain tumors are among the most lethal diseases, and early detection is crucial for improving patient outcomes. Currently, magnetic resonance imaging (MRI) is the most effective method for early brain tumor detection due to its superior imaging quality for soft tissues. However, manual analysis of brain MRI scans is prone to errors, largely influenced by the radiologists' experience and fatigue. To address these challenges, computer-aided diagnosis (CAD) systems are increasingly significant. These systems leverage advanced computer vision techniques to provide accurate predictions based on medical images, enhancing diagnostic precision and reliability. 
 
-The proposed system integrates various deep learning models through transfer learning, tailored specifically for the Brain Tumor MRI Dataset. It employs extensive data preprocessing and augmentation techniques to enhance model performance. The dataset, sourced from Kaggle, includes 7,023 MRI scans, making it one of the largest datasets available for brain tumor classification. Experimental results indicate that the system significantly improves classification accuracy, achieving approaching 99\% with ResNet-50, Xception, and InceptionV3 models.
-
-A thorough comparative analysis was conducted, benchmarking the developed models against state-of-the-art methods in the literature. To address issues of transparency and interpretability in deep learning models, Grad-CAM was utilized to visualize decision-making processes for tumor classification in MRI scans. Additionally, a user-friendly Brain Tumor Detection System was developed using Streamlit, enhancing user interaction and accessibility in medical diagnostics. This system demonstrates practical applicability in real-world settings and provides a valuable tool for clinicians.
+This paper presents a novel CAD framework for multi-class brain tumor classification. The framework employs six pre-trained deep learning models as the base, and incorporates comprehensive data preprocessing and augmentation strategies to enhance computational efficiency. To address issues related to transparency and interpretability in deep learning models, Gradient-weighted Class Activation Mapping (Grad-CAM) is utilized to visualize the decision-making processes involved in tumor classification from MRI scans. Additionally, a user-friendly Brain Tumor Detection System has been developed using Streamlit, demonstrating its practical applicability in real-world settings and providing a valuable tool for clinicians. All simulation results are derived from a public benchmark dataset, showing that the proposed framework achieves state-of-the-art performance, with accuracy approaching 99\% in ResNet-50, Xception, and InceptionV3 models.
 
 ## **Problem Statement**
 
@@ -29,7 +27,7 @@ The proposed framework for brain tumor classification is illustrated in the figu
 
 6. **Interpretability**: To improve transparency, Grad-CAM was employed to visualize the decision pathways of the models. This technique provided valuable insights into how the models arrived at their predictions based on MRI scans.
 
-## **Dataset**
+## **Dataset Acquisition:**
 
 The dataset utilized for this model is sourced from the Brain Tumor MRI Dataset available on Kaggle. It consists of MRI images categorized into different types of brain tumors and non-tumor cases.
 
@@ -76,41 +74,87 @@ Image preprocessing is applied to all the images in the dataset
   Images after preprocessing
 </p>
 
-
+## **Data Partitioning and Augmentation**
 ### **Splitting the data into train, test and validation**
-Here the train data is split into train and validation sets. The test data is completely unseen. There are 2912 train images, 729 validation images an 893 test images.
+Here the train data is split into train and validation sets. The test data is completely unseen. There are 4569 train images, 1143 validation images an 1311 test images.
 
 
 ### **Image Augmentation using Image Data Generator**
 Medical imaging datasets, including MRI images, are often limited in size due to factors such as data collection constraints, privacy concerns, or rarity of certain conditions. Image augmentation allows to artificially increase the size of the dataset by generating variations of existing images. Augmentation can help prevent the model from memorizing specific patterns or features in the training data that may not generalize well to unseen data, thus leading to a more robust and generalizable model.
 
-### **Model Training**
+## **Model Training**
 
 Resnet-50 is used for training the brain tumor dataset. ResNet-50’s increased depth allows it to capture more intricate patterns and features in the data, which can be beneficial for detecting complex structures in brain tumor images. By transfer learning, ResNet-50’s pre-trained weights from ImageNet are leveraged to bootstrap training on the brain tumor classification task. 
 
-## **Results**
-The following results have been achieved with Resnet-50 model for detection of Glioma, Meningioma, Pituitary and Normal patients from Brain MRI images.
+## **Performance Evaluation**
+### Model Comparison with Accuracy Metrics
 
-- Test Accuracy      : 97%
-- f1-score (glioma)  : 97%
-- f1-score (meningioma) : 96%
-- f1-score (pituitary) : 96%
-- f1-score (no_tumorl) : 100%
+| **Model**                 | **Class**   | **Precision** | **Recall** | **F1-score** | **Accuracy** |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+|                           | Glioma      | 0.84          | 0.99       | 0.91         |              |
+| **ResNet-50**             | Meningioma  | 0.99          | 0.77       | 0.87         |              |
+| **Without Augmentation**  | No-tumor    | 0.94          | 0.99       | 0.96         | **93.14%**   |
+|                           | Pituitary   | 0.97          | 0.97       | 0.97         |              |
+|                           | **Avg**     | **0.94**      | **0.93**   | **0.93**     |              |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+| **Model**                 | **Class**   | **Precision** | **Recall** | **F1-score** | **Accuracy** |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+|                           | Glioma      | 0.96          | 0.92       | 0.94         |              |
+|                           | Meningioma  | 0.96          | 0.91       | 0.93         |              |
+| **MobileNetV2**           | No-tumor    | 0.99          | 0.98       | 0.99         | **95.15%**   |
+|                           | Pituitary   | 1.00          | 1.00       | 0.94         |              |
+|                           | **Avg**     | **0.95**      | **0.95**   | **0.95**     |              |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+| **Model**                 | **Class**   | **Precision** | **Recall** | **F1-score** | **Accuracy** |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+|                           | Glioma      | 0.97          | 0.94       | 0.95         |              |
+|                           | Meningioma  | 0.93          | 0.99       | 0.96         |              |
+| **VGG19**                 | No-tumor    | 1.00          | 0.99       | 0.99         | **97.18%**   |
+|                           | Pituitary   | 0.99          | 0.97       | 0.98         |              |
+|                           | **Avg**     | **0.97**      | **0.97**   | **0.97**     |              |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+| **Model**                 | **Class**   | **Precision** | **Recall** | **F1-score** | **Accuracy** |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+|                           | Glioma      | 0.97          | 0.95       | 0.96         |              |
+|                           | Meningioma  | 0.98          | 0.98       | 0.98         |              |
+| **NASNetLarge**           | No-tumor    | 0.96          | 0.99       | 0.98         | **97.56%**   |
+|                           | Pituitary   | 0.99          | 0.98       | 0.99         |              |
+|                           | ** Avg**    | **0.98**      | **0.98**   | **0.98**     |              |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+| **Model**                 | **Class**   | **Precision** | **Recall** | **F1-score** | **Accuracy** |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+|                           | Glioma      | 0.98          | 0.99       | 0.98         |              |
+|                           | Meningioma  | 0.98          | 0.97       | 0.98         |              |
+| **InceptionV3**           | No-tumor    | 1.00          | 0.98       | 0.99         | **98.55%**   |
+|                           | Pituitary   | 0.99          | 0.99       | 0.99         |              |
+|                           | **Avg**     | **0.99**      | **0.99**   | **0.99**     |              |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+| **Model**                 | **Class**   | **Precision** | **Recall** | **F1-score** | **Accuracy** |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+|                           | Glioma      | 0.98          | 0.98       | 0.98         |              |
+|                           | Meningioma  | 0.97          | 0.98       | 0.98         |              |
+| **Xception**              | No-tumor    | 0.99          | 0.99       | 0.99         | **98.63%**   |
+|                           | Pituitary   | 0.99          | 0.99       | 0.99         |              |
+|                           | ** Avg**    | **0.99**      | **0.99**   | **0.99**     |              |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+| **Model**                 | **Class**   | **Precision** | **Recall** | **F1-score** | **Accuracy** |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
+|                           | Glioma      | 0.98          | 0.98       | 0.98         |              |
+|                           | Meningioma  | 0.97          | 0.98       | 0.98         |              |
+| **ResNet-50**             | No-tumor    | 0.99          | 0.99       | 0.99         | **98.70%**   |
+|                           | Pituitary   | 1.00          | 0.99       | 1.00         |              |
+|                           | **Avg**     | **0.99**      | **0.99**   | **0.99**     |              |
+|---------------------------|-------------|---------------|------------|--------------|--------------|
 
 
-**Confusion matrix**
+### **Confusion matrix**
 
 <p align="center">
   <img src="https://github.com/saras56/Brain_Tumor_Detection_Multiclass/assets/115695360/98b38811-b4ef-4ad6-b3a1-d6a75b25219a">
 </p>
 
-**Sample predictions**
+## **Interpretability**
 
-Predicted label(True label)
-
-<p align="center">
-  <img src="https://github.com/saras56/Brain_Tumor_Detection_Multiclass/assets/115695360/9dc134eb-2753-46ea-b081-2a9793c55e3d">
-</p>
 
 ## **Streamlit App**
 
@@ -122,5 +166,4 @@ Predicted label(True label)
 </p>
 
 ## **Future work**
-- Include more image preprocessing steps so as to extract intricate details correctly 
-- Increase the number of samples in the dataset
+Despite these advancements, the current approach faces limitations due to privacy concerns associated with brain tumor MRI datasets. These privacy issues restrict the sharing of datasets and complicate the acquisition of diverse training data, which is essential for improving model robustness and generalizability. To address these issues, future research could explore federated learning (FL) techniques to enhance model accuracy and generalization while preserving patient privacy. FL would allow for the coordinated training of a unified DL model across multiple health institutions, keeping patient data localized. Additionally, integrating blockchain technology with FL could further improve the transparency and traceability of model training processes, contributing to more secure and accountable machine learning practices in healthcare.
